@@ -17,9 +17,9 @@ public class ClienteService implements IClienteRepository {
 	 
 
 	@Override
-	public <S extends Cliente> S save(S entity) {
+	public <S extends Cliente> S save(S entity) {  // para crear o guardar 
 		// TODO Auto-generated method stub
-		return null;
+		return iClienteRepository.save(entity);
 	}
 
 	@Override
@@ -29,9 +29,9 @@ public class ClienteService implements IClienteRepository {
 	}
 
 	@Override
-	public Optional<Cliente> findById(Long id) {
+	public Optional<Cliente> findById(Long id) { // para buscar por id 
 		// TODO Auto-generated method stub
-		return null;
+		return iClienteRepository.findById(id);
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class ClienteService implements IClienteRepository {
 	}
 
 	@Override
-	public Iterable<Cliente> findAll() {
+	public Iterable<Cliente> findAll() {  // para ver toda la lista 
 		// TODO Auto-generated method stub
 		return iClienteRepository.findAll();
 	}
@@ -59,8 +59,9 @@ public class ClienteService implements IClienteRepository {
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(Long id) {   // para eliminar 
 		// TODO Auto-generated method stub
+		iClienteRepository.deleteById(id);
 		
 	}
 
