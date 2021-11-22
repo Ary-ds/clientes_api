@@ -3,8 +3,11 @@ package com.ary.clientes.api.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +39,7 @@ public class ClienteRestController {
 
 	@PostMapping("/clientes") // crear registro
 	@ResponseStatus(HttpStatus.CREATED)
-	public Cliente crear(@RequestBody Cliente cliente) {
+	public Cliente crear(@Valid @RequestBody Cliente cliente, BindingResult result) {
 		return clienteService.save(cliente);
 	}
 
@@ -56,16 +59,16 @@ public class ClienteRestController {
 		clienteService.actualizarModificar(cliente);
 	}
 	
-	@PutMapping("/clientes/{id}")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Cliente update(@RequestBody Cliente cliente, @PathVariable Long id) {
-		Cliente currentCliente = this.clienteService.modificar(id);
-		currentCliente.setNombre(cliente.getNombre());
-		currentCliente.setApellido(cliente.getApellido());
-		currentCliente.setEmail(cliente.getEmail());
-		this.clienteService.save(currentCliente);
-		return currentCliente;
-	}
+//	@PutMapping("/clientes/{id}")
+//	@ResponseStatus(HttpStatus.CREATED)
+//	public Cliente update(@RequestBody Cliente cliente, @PathVariable Long id) {
+//		Cliente currentCliente = this.clienteService.modificar(id);
+//		currentCliente.setNombre(cliente.getNombre());
+//		currentCliente.setApellido(cliente.getApellido());
+//		currentCliente.setEmail(cliente.getEmail());
+//		this.clienteService.save(currentCliente);
+//		return currentCliente;
+//	}
 	
 	
 

@@ -1,5 +1,6 @@
 package com.ary.clientes.api.service;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.ary.clientes.api.models.Cliente;
@@ -8,7 +9,7 @@ import com.ary.clientes.api.models.Cliente;
 @Repository
 public interface IClienteService {
 	
-	
+	@Query("UPDATE Clientes SET id=? = id=?")
 	public Cliente modificar(Long id);
 	
 
