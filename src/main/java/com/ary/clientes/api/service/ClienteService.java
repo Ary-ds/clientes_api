@@ -3,8 +3,6 @@ package com.ary.clientes.api.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -16,11 +14,11 @@ import com.ary.clientes.api.models.Cliente;
 import com.ary.clientes.api.repositoryDao.IClienteRepository;
 
 @Service
-public class ClienteService implements IClienteRepository, IClienteService{
+public class ClienteService implements IClienteRepository{
 
-	
-	@Autowired
-	private IClienteService iClienteService;
+//	
+//	@Autowired
+//	private IClienteService iClienteService;
 	
 	
 	@Autowired
@@ -208,12 +206,12 @@ public class ClienteService implements IClienteRepository, IClienteService{
 		return false;
 	}
 
-	@Override
-	@Transactional()
-	public Cliente modificar(Long id) {
-		
-		return iClienteService.modificar(id);
-	}
+//	@Override
+//	@Transactional()
+//	public Cliente modificar(Long id) {
+//		
+//		return iClienteService.modificar(id);
+//	}
 
 	
 	
