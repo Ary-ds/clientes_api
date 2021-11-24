@@ -1,12 +1,25 @@
 package com.ary.clientes.api.service;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import com.ary.clientes.api.models.Cliente;
 
 
+@Repository
 public interface IClienteService {
 	
-	public List<Cliente> findAll();
+	@Query("UPDATE Clientes SET id=? = id=?")
+	public Cliente modificar(Long id);
+	
 
 }
+
+
+//public List<Cliente> findAll();
+//
+//public void save(Cliente cliente);
+//
+//public Cliente findById(Long id);
+//
+//public void delete(Cliente cliente);
