@@ -23,7 +23,7 @@ import com.ary.clientes.api.models.Cliente;
 import com.ary.clientes.api.service.ClienteService;
 
 //la ruta donde tenemos el frontend la damos permiso para conectar con el api-rest
-@CrossOrigin(origins = { "http://localhost:4200/" })
+//@CrossOrigin(origins = { "http://localhost:4200/" })
 @RestController
 @RequestMapping("/api")
 public class ClienteRestController {
