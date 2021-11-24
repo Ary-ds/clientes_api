@@ -26,7 +26,7 @@ import com.ary.clientes.api.service.ClienteService;
 //@CrossOrigin(origins = { "http://localhost:4200/" })
 @RestController
 @RequestMapping("/api")
-public class ClienteRestController {
+public class ClienteRestController {     //http://localhost:8080/swagger-ui.html
 
 	@Autowired
 	private ClienteService clienteService;
